@@ -6,10 +6,17 @@ modules:
  - name: web
    type: html5
    path: web
-   requares:
-   -name: HANA-uaa
+
+
+ - name: db
+   type: hdb
+   path: db
+   requires:
+    - name: hdi-container
+
+
 resources:
-- name: HANA-uaa
-type: com.sap.xs.uaa-space
-parameters:
-config-path: ./xs-security.json
+ - name: hdi-container
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
