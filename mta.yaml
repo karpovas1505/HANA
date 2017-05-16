@@ -6,3 +6,10 @@ modules:
  - name: web
    type: html5
    path: web
+   requares:
+   -name: HANA-uaa
+resources:
+- name: HANA-uaa
+type: com.sap.xs.uaa-space
+parameters:
+config-path: ./xs-security.json
